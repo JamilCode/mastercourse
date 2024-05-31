@@ -1,0 +1,88 @@
+header {
+	background-image: url(masterCover.gif);
+	background-size: cover;
+	width: 100vw;
+	height: 500px;
+	text-align: center;
+}
+header h1 {
+	font-size: 4em;
+}
+
+.courses {
+	width: 300px;
+	background-color: #5b5b5b;
+	padding: 5px;
+	text-align: center;
+	border-radius: 5px;
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translate(-50%, 0px);
+}
+.courses img {
+	width: 100%;
+}
+.courses h3 {
+	margin: 0;
+}
+.courses a {
+	text-decoration: none;
+	color: white;
+}
+.courses:hover img {
+	opacity: 0.6;
+}
+.courses:hover {
+	background-color: black;
+}
+
+header form {
+	max-width: 300px;
+	text-align: end;
+	border: 1px solid black;
+	margin: auto;
+	padding: 10px 80px 5px 0px;
+	background-color: #92a7edcc;
+}
+header form input {
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+#delivery {
+	background-image: url(delivery.gif);
+	font-size: 5px;
+	height: 280px;
+	background-size: cover;
+	text-align: center;
+	padding: 0;
+	max-width: 380px;
+}
+
+#courseDetails {
+	max-width: 350px;
+	margin: auto;
+}
+#courseDetails img {
+	width: 100%;
+}
+#courseDetails td {
+	width: 50%;
+	border: 1px solid grey;
+	padding: 5px;
+}
+#courseDetails table {
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+	background-color: #b2e3f4eb;
+}
+#courseDetails button {
+	cursor: pointer;
+	width: 150px;
+	margin-top: 2px;
+	padding: 10px;
+	background-color: linen;
+	border-radius: 20px;
+}

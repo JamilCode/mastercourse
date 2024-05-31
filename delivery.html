@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Course Delivery</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+<body>
+	<header>
+		<h1>Course Delivery</h1>
+		<form name="Digital Creator Pro">
+			<label>Full Name: <input type="text" name="name" /></label><br>
+			<label>Email: <input type="email" name="email" /></label><br>
+			<input name="referrer" hidden/>
+			<input type="submit" />
+		</form>
+		<form id="delivery" style="display:none">
+			<h1 style="display:none">Thank You<br>The course has been delivered to your mail. Please check your email</h1>
+		</form>
+	</header>
+	<script>
+	let form = document.forms['Digital Creator Pro'];
+	let deliveryMsg = document.forms['delivery'];
+	
+	document.addEventListener("DOMContentLoaded", function() {
+		scriptURL ="https://script.google.com/macros/s/AKfycbyniVrk9SfCoPstajOwQzsT50IRxXx7ynDy6mEZYntGpfGTCMP1FIdUtiC-Gzo59JsEpA/exec";
+		
+		form.children['referrer'].value = document.referrer;
+		function afterSubmit() {
+			form.reset();
+			deliveryMsg.children[0].style.display = "block";
+			deliveryMsg.style.background = "#b2e3f4eb";
+		}
+		
+		function afterClick() {
+			form.style.display = "none";
+			deliveryMsg.style.display = "block";
+		}
+	
+		form.addEventListener("submit", (e) => {
+			e.preventDefault();
+			afterClick();
+			fetch(scriptURL, { method: "POST", body: new FormData(form) })
+			.then((response) => {
+				console.log("Thank You");
+				afterSubmit();
+			})
+			.catch((error) => {
+				console.error("Error!", error.message);
+// Additional function call if there's an error with the fetch
+			});
+		});
+	});
+	</script>
+</body>
+</html>
